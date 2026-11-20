@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Ledger — GTA VI Trophy Guide &amp; Tracker</title>
+<meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI PS5 trophies: cited guides, a platinum roadmap, filters and a spoiler setting.">
+<link rel="stylesheet" href="style.css">
+<script type="module" src="app.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">L</span>
+    <div>
+      <p class="brand-name">LEONIDA LEDGER</p>
+      <p class="brand-sub">GTA VI TROPHY GUIDE · PS5 · OFFLINE</p>
+    </div>
+  </div>
+  <div class="header-badges">
+    <span class="badge" id="spoiler-badge" hidden>SPOILER-FREE</span>
+    <span class="badge"><span class="dot"></span>OFFLINE READY</span>
+    <span class="badge">55 TROPHIES</span>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div>
+      <p class="eyebrow">YOUR ROAD TO PLATINUM</p>
+      <h1>Every trophy.<br><span>One clear route.</span></h1>
+      <p class="hero-sub">All 55 trophies with cited guides, a six-stage roadmap and a
+      tracker that remembers where you stopped. No account, no network.</p>
+    </div>
+    <div class="dashboard" id="dashboard" aria-label="Collection progress">
+      <div class="dashboard-top">
+        <p class="dashboard-title">COLLECTION PROGRESS</p>
+        <p class="dashboard-count"><span id="progress-label">0 <small>/ 55</small></span></p>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      <p class="dashboard-percent"><span id="progress-percent">0% complete</span><span>1 platinum · 2 gold · 6 silver · 46 bronze</span></p>
+      <div class="grade-chips" id="grade-chips"></div>
+      <div class="kind-bars" id="kind-bars"></div>
+      <div class="next-up" id="next-up"></div>
+    </div>
+  </section>
+
+  <nav class="tabs" aria-label="Guide views">
+    <button class="tab active" id="tab-tracker" type="button"><span class="tab-number">01</span> Trophy tracker</button>
+    <button class="tab" id="tab-roadmap" type="button"><span class="tab-number">02</span> Platinum roadmap <span class="tab-alert">1 missable</span></button>
+    <p class="save-label"><span class="dot"></span><span id="save-label">Progress saved on this device</span></p>
+  </nav>
+
+  <section id="tracker-view">
+    <div class="toolbar">
+      <div class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="search-input" type="search" placeholder="Find a trophy or a guide…" aria-label="Search trophies">
+        <kbd>/</kbd>
+      </div>
+      <label class="sort-label">Sort
+        <select id="sort-select" aria-label="Sort trophies">
+          <option value="roadmap">Roadmap order</option>
+          <option value="grade">Grade · high first</option>
+          <option value="name">Name · A–Z</option>
+          <option value="difficulty">Difficulty · hardest first</option>
+        </select>
+      </label>
+      <div class="toolbar-actions">
+        <button class="mini-button" id="export-button" type="button">Export</button>
+        <button class="mini-button" id="import-button" type="button">Import</button>
+        <input id="import-file" type="file" accept="application/json,.json" hidden>
+        <button class="mini-button quiet" id="reset-progress" type="button">Reset</button>
+      </div>
+    </div>
+
+    <div class="filter-row">
+      <p class="filter-caption">FILTER BY</p>
+      <div class="filter-chips" id="filter-chips"></div>
+      <p class="shown-count"><span id="shown-count">55</span> shown · <span id="active-filter-label">ALL TROPHIES</span></p>
+      <label class="spoiler-switch">
+        <input id="spoiler-toggle" type="checkbox" checked>
+        <span class="switch" aria-hidden="true"></span>
+        Hide story spoilers
+      </label>
+    </div>
+
+    <div class="tracker-grid">
+      <section class="list-panel" aria-label="Trophy checklist">
+        <div class="list-head">
+          <div>
+            <p class="eyebrow">THE COMPLETE LIST</p>
+            <h2>Checklist <span class="count-pill">55</span></h2>
+          </div>
+          <p class="list-note">Tick a trophy as you earn it.<br>Guides open on the right.</p>
+        </div>
+        <div class="trophy-list" id="trophy-list" role="list"></div>
+      </section>
+      <section class="detail-panel" id="detail-panel" aria-label="Trophy guide"></section>
+    </div>
+  </section>
+
+  <section id="roadmap-view" hidden>
+    <div class="roadmap-intro">
+      <div>
+        <p class="eyebrow">RECOMMENDED ORDER · ONE PLAYTHROUGH</p>
+        <h2>Platinum roadmap</h2>
+        <p class="roadmap-lede">Play the story, protect the one missable trophy, then work
+        the open-world list. All 55 trophies are offline and single-player; one
+        story run is enough, and free-roam stays open after the credits.</p>
+      </div>
+      <div class="roadmap-stats">
+        <p><b>≈ 200</b> hours to platinum</p>
+        <p><b>4/10</b> difficulty · PowerPyx estimate</p>
+        <p><b>1</b> playthrough · <b>0</b> online trophies</p>
+      </div>
+    </div>
+
+    <div class="missable-banner" role="note">
+      <span class="banner-icon" aria-hidden="true">!</span>
+      <div>
+        <p><b>Before the final mission: clear Positive Mental Attitude.</b></p>
+        <p>Meditate at all 18 spots across 10 locations, with Jason and Lucia.
+        The first meditation — Lucia on the balcony at Jason's house in
+        Chapter 1 — is the only thing in the game that can lock you out of a
+        trophy. Do it the morning after Down to Earth.</p>
+      </div>
+      <a class="banner-link" href="#tracker" data-select="28">View trophy ↗</a>
+    </div>
+
+    <div class="roadmap-grid" id="roadmap-grid"></div>
+
+    <p class="roadmap-sources">Roadmap basis:
+      <a href="https://www.powerpyx.com/grand-theft-auto-6-gta-6-trophy-guide-roadmap/" target="_blank" rel="noopener noreferrer">PowerPyx · GTA 6 Trophy Guide &amp; Roadmap ↗</a>
+      · <a href="https://www.gtabase.com/grand-theft-auto-vi/trophies/" target="_blank" rel="noopener noreferrer">GTABase · GTA 6 Trophies ↗</a>
+      · <a href="https://gta-zone.com/news/gta-6-trophies-achievements/" target="_blank" rel="noopener noreferrer">GTA Zone · Trophy List ↗</a>
+    </p>
+  </section>
+
+  <footer class="site-footer">
+    <p><b>About this guide.</b> Trophy names, descriptions and grades are the
+    official list as PlayStation publishes it. Every guide is written for this
+    entry in our own words and cites its sources beside the trophy; a guide
+    never copies another guide's text. No Rockstar Games logo, artwork or game
+    screenshot appears here — the look is our own.</p>
+    <p>Progress lives only in this browser (localStorage). Export downloads a
+    JSON file; import reads one back. Nothing is sent anywhere.</p>
+  </footer>
+</main>
+
+<div class="toast" id="toast" role="status"></div>
+</body>
+</html>
